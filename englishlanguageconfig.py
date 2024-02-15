@@ -31,5 +31,8 @@ lcbeeeeeeeep = 'BEEP BEEP?'
 # APIKEY
 lcAPI_KEY = 'API key'
 
+# BASE_URL
+lcBASE_URL = 'Base URL'
+
 # 捕捉到openai.PermissionDeniedError异常
 lcException_detected = 'Exception detected'

@@ -14,8 +14,8 @@ A Prompt editor written with Streamlit
  - [x] Support selecting ChatGPT model
  - [x] Support change the language
  - [x] Support hot change API KEY
+ - [x] Support hot change Base URL
  - [ ] Support setting ChatGPT proxy
- - [ ] Support hot change ChatGPT API Base
  - [ ] Prompt test environment supports streaming
 
 ## Quick start

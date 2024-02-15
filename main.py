@@ -29,7 +29,7 @@ else:
 
 # 设置API
 API_KEY = st.sidebar.text_input(lcAPI_KEY, type="password")
-
+BASE_URL = st.sidebar.text_input(lcBASE_URL, "https://api.openai.com/v1")
 
 # 设置title
 st.title(lctitle)
@@ -81,6 +81,7 @@ if say:
     umessage.write(say)
     client = OpenAI(
         api_key=API_KEY,
+        base_url=BASE_URL
     )
     try:
         # 发起请求
@@ -95,7 +96,7 @@ if say:
                 }
 
             ],
-            model=modelchoices,
+            model=modelchoices
         )
         # 显示回答
         amessage = st.chat_message("assistant")
