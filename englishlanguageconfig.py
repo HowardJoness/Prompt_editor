@@ -28,5 +28,8 @@ lctest_conversation = 'Test conversation'
 # 啵哔啵哔？
 lcbeeeeeeeep = 'BEEP BEEP?'
 
+# APIKEY
+lcAPI_KEY = 'API key'
+
 # 捕捉到openai.PermissionDeniedError异常
 lcException_detected = 'Exception detected'

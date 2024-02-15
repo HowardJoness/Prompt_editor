@@ -15,7 +15,8 @@ def num_tokens_from_string(string: str, encoding_name: str) -> int:
     encoding = tiktoken.encoding_for_model(encoding_name)
     num_tokens = len(encoding.encode(string))
     return num_tokens
-# Using object notation
+
+# 设置语言选项
 languagebox = st.sidebar.selectbox(
     "选择一种语言 | select a language",
     ("简体中文", "English")
@@ -25,6 +26,9 @@ if languagebox == "简体中文":
     from chineselanguageconfig import *
 else:
     from englishlanguageconfig import *
+
+# 设置API
+API_KEY = st.sidebar.text_input(lcAPI_KEY, type="password")
 
 
 # 设置title

@@ -13,9 +13,9 @@
  - [x] 支持计算 Prompt 所耗费的token与资金
  - [x] 支持选择 ChatGPT 模型
  - [x] 支持切换语言
+ - [x] 支持热更改 API KEY
  - [ ] 支持设置 ChatGPT 代理
- - [ ] 支持热更改 API KEY
- - [ ] 支持热更改 ChatGPT API
+ - [ ] 支持热更改 ChatGPT API Base
  - [ ] Prompt 测试环境支持流式传输
 
 ## 快速开始
