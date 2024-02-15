@@ -12,6 +12,7 @@ A Prompt editor written with Streamlit
  - [x] Support quick test prompt via ChatGPT
  - [x] Supports calculation of tokens and funds nsumed by Prompt
  - [x] Support selecting ChatGPT model
+ - [x] Support change the language
  - [ ] Support setting ChatGPT proxy
  - [ ] Support hot change API KEY
  - [ ] Support hot change ChatGPT API

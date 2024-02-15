@@ -12,11 +12,11 @@
  - [x] 支持通过 ChatGPT 快速测试 Prompt
  - [x] 支持计算 Prompt 所耗费的token与资金
  - [x] 支持选择 ChatGPT 模型
+ - [x] 支持切换语言
  - [ ] 支持设置 ChatGPT 代理
  - [ ] 支持热更改 API KEY
  - [ ] 支持热更改 ChatGPT API
  - [ ] Prompt 测试环境支持流式传输
- - [ ] 支持切换语言
 
 ## 快速开始
 
