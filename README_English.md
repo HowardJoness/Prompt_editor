@@ -23,7 +23,7 @@ Please modify the API KEY in app.py before running
 
 ```bash
 pip install -r requirements.txt
-streamlit run app.py
+streamlit run main.py
 ```
 
 ## Access program
