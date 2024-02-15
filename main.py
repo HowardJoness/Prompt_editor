@@ -74,9 +74,6 @@ st.write(f"{lctotal_tokens}: {total_tokens}")
 st.write(f"{lctotal_cost}: ${cost:.4f} ￥{costr:.4f}")
 
 
-
-
-
 # 对话框用于输入对话
 st.subheader(lctest_conversation)
 say = st.chat_input(lcbeeeeeeeep)
