@@ -30,6 +30,7 @@ else:
 # 设置API
 API_KEY = st.sidebar.text_input(lcAPI_KEY, type="password")
 BASE_URL = st.sidebar.text_input(lcBASE_URL, "https://api.openai.com/v1")
+HTTP_CLIENT  = st.sidebar.text_input(lcHTTP_CLIENT)
 
 # 设置title
 st.title(lctitle)
@@ -72,6 +73,10 @@ st.write(f"{lctotal_chinese}: {total_chinese_characters}")
 st.write(f"{lctotal_tokens}: {total_tokens}")
 st.write(f"{lctotal_cost}: ${cost:.4f} ￥{costr:.4f}")
 
+
+
+
+
 # 对话框用于输入对话
 st.subheader(lctest_conversation)
 say = st.chat_input(lcbeeeeeeeep)
@@ -79,9 +84,16 @@ if say:
     # 显示用户输入
     umessage = st.chat_message("user")
     umessage.write(say)
+
+    # 如果HTTP_CLIENT为空，则设置为None
+    if HTTP_CLIENT == "":
+        HC = None
+    else:
+        HC = HTTP_CLIENT
     client = OpenAI(
         api_key=API_KEY,
-        base_url=BASE_URL
+        base_url=BASE_URL,
+        http_client=HC
     )
     try:
         # 发起请求

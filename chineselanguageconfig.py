@@ -34,5 +34,8 @@ lcAPI_KEY = 'API key'
 # BASE_URL
 lcBASE_URL = 'API接口(Base URL)'
 
+# http代理
+lcHTTP_CLIENT = 'HTTP 代理服务端（留空为无）'
+
 # 捕捉到openai.PermissionDeniedError异常
 lcException_detected = '捕捉到openai.PermissionDeniedError异常'
