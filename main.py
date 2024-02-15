@@ -15,9 +15,20 @@ def num_tokens_from_string(string: str, encoding_name: str) -> int:
     encoding = tiktoken.encoding_for_model(encoding_name)
     num_tokens = len(encoding.encode(string))
     return num_tokens
+# Using object notation
+languagebox = st.sidebar.selectbox(
+    "选择一种语言 | select a language",
+    ("简体中文", "English")
+)
+
+if languagebox == "简体中文":
+    from chineselanguageconfig import *
+else:
+    from englishlanguageconfig import *
+
 
 # 设置title
-st.title("PROMPT编辑器")
+st.title(lctitle)
 modelchoice = ["gpt-3.5-turbo", "gpt-3.5-turbo-0125", "gpt-3.5-turbo-0301", "gpt-3.5-turbo-0613", "gpt-3.5-turbo-1106", "gpt-3.5-turbo-16k", "gpt-3.5-turbo-16k-0613", "gpt-4", "gpt-4-0125-preview", "gpt-4-0314", "gpt-4-0613", "gpt-4-1106-preview", "gpt-4-1106-vision-preview", "gpt-4-32k", "gpt-4-32k-0314", "gpt-4-32k-0613", "gpt-4-turbo-preview", "gpt-4-vision-preview"]
 modelprice = {
     "gpt-3.5-turbo": {"official_ask_price": 0.0000015, "official_answer_price": 0.000002},
@@ -39,9 +50,9 @@ modelprice = {
     "gpt-4-turbo-preview": {"official_ask_price": 0.00001, "official_answer_price": 0.00003},
     "gpt-4-vision-preview": {"official_ask_price": 0.00001, "official_answer_price": 0.00003}
 }
-modelchoices = st.selectbox("使用的模型", modelchoice)
+modelchoices = st.selectbox(lcmodelchoices, modelchoice)
 # 编辑文本用的富文本框
-text = st.text_area("请键入prompt", "你是一个智能AI助手，会解答由我提出的任何问题", height=300)
+text = st.text_area(lctypeprompt, lcdefaultprompt, height=300)
 
 # 获取文本相关信息
 total_characters = len(text)
@@ -52,14 +63,14 @@ cost = total_tokens * tempprice
 costr = cost*7.19
 
 # 显示文本相关信息
-st.write(f"总字符数: {total_characters}")
-st.write(f"总汉字数: {total_chinese_characters}")
-st.write(f"总token数: {total_tokens}")
-st.write(f"耗费资金: ${cost:.4f} ￥{costr:.4f}")
+st.write(f"{lctotal_characters}: {total_characters}")
+st.write(f"{lctotal_chinese}: {total_chinese_characters}")
+st.write(f"{lctotal_tokens}: {total_tokens}")
+st.write(f"{lctotal_cost}: ${cost:.4f} ￥{costr:.4f}")
 
 # 对话框用于输入对话
-st.subheader("对话测试")
-say = st.chat_input("啵哔啵哔？")
+st.subheader(lctest_conversation)
+say = st.chat_input(lcbeeeeeeeep)
 if say:
     # 显示用户输入
     umessage = st.chat_message("user")
@@ -91,4 +102,4 @@ if say:
         # 捕捉到openai.PermissionDeniedError错误
         error_message = err.message
         amessage = st.chat_message("assistant")
-        amessage.write(f'捕捉到openai.PermissionDeniedError异常：{error_message}')
+        amessage.write(f'{lcException_detected}：{error_message}')
