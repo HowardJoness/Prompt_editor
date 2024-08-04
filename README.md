@@ -16,7 +16,6 @@
  - [x] 支持热更改 API KEY
  - [x] 支持热更改 Base URL（API接口）
  - [x] 支持设置 ChatGPT 代理
- - [ ] Prompt 测试环境支持流式传输
 
 ## 快速开始
 
